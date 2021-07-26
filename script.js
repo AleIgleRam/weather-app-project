@@ -64,7 +64,7 @@ function showWeather(event) {
       let currentTemperature = Math.round(response.data.main.temp);
       let city = response.data.name;
       let country = response.data.sys.country;
-      let weatherText = response.data.weather[0].main;
+      let weatherText = response.data.weather[0].description;
       let h1 = document.querySelector("h1");
       h1.innerHTML = `${city}, ${country} ${currentTemperature} C° ${weatherText}`;
     }
