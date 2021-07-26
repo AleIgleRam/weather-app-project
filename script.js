@@ -38,7 +38,10 @@ function searchWeather(event) {
     let currentTemperature = Math.round(response.data.main.temp);
     let city = response.data.name;
     let country = response.data.sys.country;
-    let weatherText = response.data.weather[0].main;
+    let weatherText = response.data.weather[0].description;
+    let currenthumidity = document.querySelector("#hum1");
+    let humidity = response.data.main.humidity;
+    currenthumidity.innerHTML = `${humidity} %`;
     let h1 = document.querySelector("h1");
     h1.innerHTML = `${city}, ${country} ${currentTemperature} C° ${weatherText}`;
   }
@@ -65,6 +68,9 @@ function showWeather(event) {
       let city = response.data.name;
       let country = response.data.sys.country;
       let weatherText = response.data.weather[0].description;
+      let currenthumidity = document.querySelector("#hum1");
+      let humidity = response.data.main.humidity;
+      currenthumidity.innerHTML = `${humidity} %`;
       let h1 = document.querySelector("h1");
       h1.innerHTML = `${city}, ${country} ${currentTemperature} C° ${weatherText}`;
     }
