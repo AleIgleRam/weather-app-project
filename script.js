@@ -42,8 +42,13 @@ function searchWeather(event) {
     let currenthumidity = document.querySelector("#hum1");
     let humidity = response.data.main.humidity;
     currenthumidity.innerHTML = `${humidity} %`;
+    let icon = document.querySelector("#icon");
+    let image = icon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
     let h1 = document.querySelector("h1");
-    h1.innerHTML = `${city}, ${country} ${currentTemperature} C° ${weatherText}`;
+    h1.innerHTML = `${image} ${city}, ${country} ${currentTemperature} C° ${weatherText}`;
   }
 
   axios.get(weatherUrl).then(displayWeather);
@@ -64,15 +69,25 @@ function showWeather(event) {
     let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`;
 
     function displayWeather(response) {
-      let currentTemperature = Math.round(response.data.main.temp);
-      let city = response.data.name;
-      let country = response.data.sys.country;
+      let currentTemperatureElement = document.querySelector(
+        "#currentTemperature"
+      );
+      currentTemperatureElement.innerHTML = Math.round(response.data.main.temp);
+      let cityElement = document.querySelector("#city");
+      cityElement.innerHTML = response.data.name;
+      let countryElement = document.querySelector("#country");
+      countryElement.innerHTML = response.data.sys.country;
       let weatherText = response.data.weather[0].description;
       let currenthumidity = document.querySelector("#hum1");
       let humidity = response.data.main.humidity;
       currenthumidity.innerHTML = `${humidity} %`;
+      let icon = document.querySelector("#icon");
+      icon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      );
       let h1 = document.querySelector("h1");
-      h1.innerHTML = `${city}, ${country} ${currentTemperature} C° ${weatherText}`;
+      h1.innerHTML = ` ${city}, ${country} ${currentTemperature} C° ${weatherText}`;
     }
 
     axios.get(weatherUrl).then(displayWeather);
