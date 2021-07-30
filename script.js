@@ -34,21 +34,25 @@ function searchWeather(event) {
   let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&APPID=${apiKey}&&units=metric`;
 
   function displayWeather(response) {
-    console.log(response.data);
-    let currentTemperature = Math.round(response.data.main.temp);
-    let city = response.data.name;
-    let country = response.data.sys.country;
-    let weatherText = response.data.weather[0].description;
-    let currenthumidity = document.querySelector("#hum1");
-    let humidity = response.data.main.humidity;
-    currenthumidity.innerHTML = `${humidity} %`;
+    let currentTemperatureElement = document.querySelector(
+      "#currentTemperature"
+    );
+    let cityElement = document.querySelector("#city");
+    let countryElement = document.querySelector("#country");
+    let weatherTextElement = document.querySelector("#weatherText");
+    let currenthumidityElement = document.querySelector("#hum0");
+
     let icon = document.querySelector("#icon");
-    let image = icon.setAttribute(
+    icon.setAttribute(
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-    let h1 = document.querySelector("h1");
-    h1.innerHTML = `${image} ${city}, ${country} ${currentTemperature} C° ${weatherText}`;
+
+    currentTemperatureElement.innerHTML = Math.round(response.data.main.temp);
+    cityElement.innerHTML = response.data.name;
+    countryElement.innerHTML = response.data.sys.country;
+    weatherTextElement.innerHTML = response.data.weather[0].description;
+    currenthumidityElement.innerHTML = `${response.data.main.humidity} %`;
   }
 
   axios.get(weatherUrl).then(displayWeather);
@@ -72,22 +76,22 @@ function showWeather(event) {
       let currentTemperatureElement = document.querySelector(
         "#currentTemperature"
       );
-      currentTemperatureElement.innerHTML = Math.round(response.data.main.temp);
+
       let cityElement = document.querySelector("#city");
-      cityElement.innerHTML = response.data.name;
       let countryElement = document.querySelector("#country");
-      countryElement.innerHTML = response.data.sys.country;
-      let weatherText = response.data.weather[0].description;
-      let currenthumidity = document.querySelector("#hum1");
-      let humidity = response.data.main.humidity;
-      currenthumidity.innerHTML = `${humidity} %`;
+      let weatherTextElement = document.querySelector("#weatherText");
+      let currenthumidityElement = document.querySelector("#hum0");
       let icon = document.querySelector("#icon");
       icon.setAttribute(
         "src",
         `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       );
-      let h1 = document.querySelector("h1");
-      h1.innerHTML = ` ${city}, ${country} ${currentTemperature} C° ${weatherText}`;
+
+      currentTemperatureElement.innerHTML = Math.round(response.data.main.temp);
+      cityElement.innerHTML = response.data.name;
+      countryElement.innerHTML = response.data.sys.country;
+      weatherTextElement.innerHTML = response.data.weather[0].description;
+      currenthumidityElement.innerHTML = `${response.data.main.humidity} %`;
     }
 
     axios.get(weatherUrl).then(displayWeather);
