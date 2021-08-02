@@ -1,4 +1,4 @@
-//Feature #1
+//Current Time
 let today = new Date();
 
 let days = [
@@ -50,7 +50,7 @@ function searchWeather(event) {
 
     currentTemperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
-    countryElement.innerHTML = response.data.sys.country;
+    countryElement.innerHTML = `, ${response.data.sys.country}`;
     weatherTextElement.innerHTML = response.data.weather[0].description;
     currenthumidityElement.innerHTML = `${response.data.main.humidity} %`;
   }
@@ -89,7 +89,7 @@ function showWeather(event) {
 
       currentTemperatureElement.innerHTML = Math.round(response.data.main.temp);
       cityElement.innerHTML = response.data.name;
-      countryElement.innerHTML = response.data.sys.country;
+      countryElement.innerHTML = `, ${response.data.sys.country}`;
       weatherTextElement.innerHTML = response.data.weather[0].description;
       currenthumidityElement.innerHTML = `${response.data.main.humidity} %`;
     }
