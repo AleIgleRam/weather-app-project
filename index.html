@@ -15,93 +15,130 @@
       src="https://kit.fontawesome.com/557bdbc55a.js"
       crossorigin="anonymous"
     ></script>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Major+Mono+Display&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Major+Mono+Display&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body >
+  <body>
     <div class="style">
-    <header>
-    <div class="container">
-      <div class="row">
-        <div class="col-1">
-          <form class="city" id=city-search>
-            <input type="text" id=city-input placeholder="Enter a city 📍" autocomplete="off"/>
-           <i class="fas fa-search" id=enter-city></i>
-          </form>
-        </div>
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-1">
+              <form class="city" id="city-search">
+                <input
+                  type="text"
+                  id="city-input"
+                  placeholder="Enter a city..."
+                  autocomplete="off"
+                />
+                <i class="fas fa-search" id="enter-city"></i>
+              </form>
+            </div>
 
-        <div class="col-3">
-            <i class="fas fa-thumbtack" id=current-city></i>
-        </div>
+            <div class="col-3">
+              <i class="fas fa-thumbtack" id="current-city"></i>
+            </div>
 
-        <div class="col-3">
-          <span><i class="fas fa-sun"></i></span>
-          <span><i class="fas fa-arrow-up"></i></span>
-          <span class="sunrise">5:20</span>
-          <span><i class="fas fa-arrow-down"></i></span>
-          <span class="sunset">21:30</span>
+            <div class="col-4">
+              <span><i class="fas fa-sun"></i></span>
+              <span><i class="fas fa-arrow-up"></i></span>
+              <span class="sunrise">5:20</span>
+              <span><i class="fas fa-arrow-down"></i></span>
+              <span class="sunset">21:30</span>
+            </div>
+          </div>
         </div>
-      </div>
       </header>
-    
 
-      <h1><img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" id="icon"><span id=city>Lima</span> <span id=country>Pe</span> <span id=currentTemperature>17</span> <span id=units>C°</span> <span id=weatherText>cloudy</span></h1>
-      <div class=row><span class="col-3" id=current-date> </span> <span class="col-1" ><i class="fas fa-tint"></i><span id="hum0">19 %</span></span></div>
- 
-  
+      <h1>
+        <img
+          src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+          id="icon"
+        />
+        <span id="currentTemperature">17</span>
+        <span id="units">C°</span>
+      </h1>
+
+      <ul>
+        <li id="city">Lima</li>
+        <li id="weatherText">cloudy</li>
+        <li>
+          Humidity: <i class="fas fa-tint"></i><span id="hum0">19 %</span>
+        </li>
+        <li>Last updated: <span id="current-date"> </span></li>
+      </ul>
+
       <main>
-      <div class="days">
-        <div class="row">
-          <span class="col-2">Wed</span>
-          <span class="col-2">Tue</span>
-          <span class="col-2">Fri</span>
-          <span class="col-2">Sat</span>
-          <span class="col-2">Sun</span>
+        <div class="days">
+          <div class="row">
+            <span class="col-2">Wed</span>
+            <span class="col-2">Tue</span>
+            <span class="col-2">Fri</span>
+            <span class="col-2">Sat</span>
+            <span class="col-2">Sun</span>
+          </div>
         </div>
-      </div>
 
-      <div class="temperature" >
-        <div class="row">
-          <span class="col-2"id=cel1>20°C</span>
-          <span class="col-2" id=cel2>25°C</span>
-          <span class="col-2"id=cel3>21°C</span>
-          <span class="col-2"id=cel4>15°C</span>
-          <span class="col-2"id=cel5>23°C</span>
+        <div class="temperature">
+          <div class="row">
+            <span class="col-2" id="cel1">20°C</span>
+            <span class="col-2" id="cel2">25°C</span>
+            <span class="col-2" id="cel3">21°C</span>
+            <span class="col-2" id="cel4">15°C</span>
+            <span class="col-2" id="cel5">23°C</span>
+          </div>
         </div>
-      </div>
 
-      <div class="weather">
-        <div class="row">
-          <span class="col-2"><i class="fas fa-cloud-showers-heavy"></i></span>
-          <span class="col-2"><i class="fas fa-sun"></i></span>
-          <span class="col-2"><i class="fas fa-sun"></i></span>
-          <span class="col-2"><i class="fas fa-cloud-sun-rain"></i></span>
-          <span class="col-2"><i class="fas fa-cloud-sun"></i></span>
+        <div class="weather">
+          <div class="row">
+            <span class="col-2"
+              ><i class="fas fa-cloud-showers-heavy"></i
+            ></span>
+            <span class="col-2"><i class="fas fa-sun"></i></span>
+            <span class="col-2"><i class="fas fa-sun"></i></span>
+            <span class="col-2"><i class="fas fa-cloud-sun-rain"></i></span>
+            <span class="col-2"><i class="fas fa-cloud-sun"></i></span>
+          </div>
         </div>
-      </div>
 
-      <div class="humidity">
-        <div class="row">
-          <span class="col-2" ><i class="fas fa-tint"></i> <span id="hum1"></span></span>
-          <span class="col-2" ><i class="fas fa-tint"></i> <span id="hum2"></span></span>
-          <span class="col-2" ><i class="fas fa-tint"></i><span id="hum3"></span></span>
-          <span class="col-2" ><i class="fas fa-tint"></i> <span id="hum4"></span></span>
-          <span class="col-2" ><i class="fas fa-tint"></i> <span id="hum5"></span></span>
+        <div class="humidity">
+          <div class="row">
+            <span class="col-2"
+              ><i class="fas fa-tint"></i> <span id="hum1"></span
+            ></span>
+            <span class="col-2"
+              ><i class="fas fa-tint"></i> <span id="hum2"></span
+            ></span>
+            <span class="col-2"
+              ><i class="fas fa-tint"></i><span id="hum3"></span
+            ></span>
+            <span class="col-2"
+              ><i class="fas fa-tint"></i> <span id="hum4"></span
+            ></span>
+            <span class="col-2"
+              ><i class="fas fa-tint"></i> <span id="hum5"></span
+            ></span>
+          </div>
         </div>
-      </div>
-  
 
- <div class="gitHub"> 
-<a href="https://github.com/AleIgleRam/weather-app-project" target="_blank">Open-source code </a><span>by Ale Iglesias</span></div>    
+        <div class="gitHub">
+          <a
+            href="https://github.com/AleIgleRam/weather-app-project"
+            target="_blank"
+            >Open-source code </a
+          ><span>by Ale Iglesias</span>
+        </div>
       </main>
-    </div>  
-  
-    <script src="script.js">
-    </script>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

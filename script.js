@@ -38,7 +38,6 @@ function searchWeather(event) {
       "#currentTemperature"
     );
     let cityElement = document.querySelector("#city");
-    let countryElement = document.querySelector("#country");
     let weatherTextElement = document.querySelector("#weatherText");
     let currenthumidityElement = document.querySelector("#hum0");
 
@@ -78,7 +77,6 @@ function showWeather(event) {
       );
 
       let cityElement = document.querySelector("#city");
-      let countryElement = document.querySelector("#country");
       let weatherTextElement = document.querySelector("#weatherText");
       let currenthumidityElement = document.querySelector("#hum0");
       let icon = document.querySelector("#icon");
