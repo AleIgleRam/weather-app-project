@@ -4,6 +4,9 @@
   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
+.header {
+  padding: 50px;
+}
 .city {
   font-family: "Cabin Sketch", cursive;
 }
@@ -38,7 +41,7 @@
 }
 
 main {
-  margin: 50px 600px 50px 200px;
+  margin: 20px 600px 50px 20px;
 }
 
 h1 {
