@@ -7,8 +7,12 @@
 .header {
   padding: 50px;
 }
+
 .city {
   font-family: "Cabin Sketch", cursive;
+}
+#city {
+  font-size: 50px;
 }
 
 #enter-city {
@@ -41,16 +45,12 @@
 }
 
 main {
-  margin: 20px 600px 50px 20px;
+  padding: 50px;
 }
 
 h1 {
   font-size: 120px;
   font-family: "Cabin Sketch", cursive;
-}
-
-#icon {
-  font-size: 120px;
 }
 
 h1::first-letter {
