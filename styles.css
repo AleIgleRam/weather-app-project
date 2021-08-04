@@ -4,18 +4,8 @@
   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
-header {
-  font-size: 18px;
-  position: relative;
-  top: 50px;
-  bottom: 50px;
-  left: 76px;
-  right: 0;
-}
-
 .city {
   font-family: "Cabin Sketch", cursive;
-  margin-left: -200px;
 }
 
 #enter-city {
@@ -52,10 +42,12 @@ main {
 }
 
 h1 {
-  font-size: 38px;
-  margin: 100px 850px 15px 190px;
-  padding: 20px 10px 20px 10px;
+  font-size: 120px;
   font-family: "Cabin Sketch", cursive;
+}
+
+#icon {
+  font-size: 120px;
 }
 
 h1::first-letter {
