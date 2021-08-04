@@ -12,7 +12,8 @@
   font-family: "Cabin Sketch", cursive;
 }
 #city {
-  font-size: 50px;
+  font-size: 80px;
+  font-family: "Cabin Sketch", cursive;
 }
 
 #enter-city {
@@ -63,8 +64,14 @@ ul {
   font-family: "Cabin Sketch", cursive;
 }
 
-ul::first-letter {
+li::first-letter {
   text-transform: capitalize;
+}
+
+#units {
+  position: relative;
+  font-size: 60px;
+  top: -34px;
 }
 
 #hum0 {
