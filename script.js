@@ -58,8 +58,8 @@ function searchWeather(event) {
   axios.get(weatherUrl).then(displayWeather);
 }
 
-let cityWeather = document.querySelector("#city-search");
-cityWeather.addEventListener("submit", searchWeather);
+let cityWeather = document.querySelector("#enter-city");
+cityWeather.addEventListener("click", searchWeather);
 
 //Current Weather Current City
 

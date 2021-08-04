@@ -18,7 +18,7 @@ header {
   margin-left: -200px;
 }
 
-.enter-city {
+#enter-city {
   color: #6ce6dd;
   background-color: #e3ffc3;
   border-radius: 5px;
@@ -26,7 +26,7 @@ header {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.enter-city:hover {
+#enter-city:hover {
   background: #6ce6dd;
   color: #e3ffc3;
   cursor: pointer;
