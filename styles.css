@@ -8,12 +8,14 @@
   padding: 50px;
 }
 
-.city {
+.city-look {
   font-family: "Cabin Sketch", cursive;
 }
 #city {
   font-size: 80px;
   font-family: "Cabin Sketch", cursive;
+  text-align: center;
+  margin-top: 30px;
 }
 
 #enter-city {
@@ -92,21 +94,23 @@ li::first-letter {
   font-size: 20px;
 }
 
-.temperature {
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+.weather-forecast-temperatures {
   font-size: 20px;
   font-family: "Major Mono Display", monospace;
 }
 
-.days {
+.weather-forecast-date {
   font-family: "Cabin Sketch", cursive;
   font-size: 30px;
 }
 
-.weather {
-  font-size: 20px;
-  margin-left: 21px;
+.fa-tint {
+  color: #40a8c4;
 }
-
 .humidity {
   margin-top: 30px;
   margin-left: 21px;
@@ -116,19 +120,6 @@ li::first-letter {
 
 .fa-sun {
   color: #f7aa00;
-}
-
-.fa-tint {
-  color: #40a8c4;
-}
-
-.fa-cloud-showers-heavy,
-.fa-cloud-sun-rain {
-  color: #64c4ed;
-}
-
-.fa-cloud-sun {
-  color: #fffdef;
 }
 
 .gitHub {

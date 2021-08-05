@@ -28,11 +28,11 @@
 
   <body>
     <div class="style">
-    <div class="header">
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <form class="city" id="city-search">
+      <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <form class="city-look" id="city-search">
                 <input
                   type="text"
                   id="city-input"
@@ -41,111 +41,76 @@
                 />
                 <i class="fas fa-search" id="enter-city"></i>
                 <span>
-              <i class="fas fa-thumbtack" id="current-city"></i>
-            </span>
+                  <i class="fas fa-thumbtack" id="current-city"></i>
+                </span>
               </form>
-              </div>
-   
-    <div class="col">
-       <span><i class="fas fa-sun"></i></span>
+            </div>
+
+            <div class="col">
+              <span><i class="fas fa-sun"></i></span>
               <span><i class="fas fa-arrow-up"></i></span>
               <span class="sunrise">5:20</span>
               <span><i class="fas fa-arrow-down"></i></span>
               <span class="sunset">21:30</span>
-               </div>
-    </div>
- </div>
- </div>
-
-
-     <div class="container">
-  <div class="row">
-    <div class="col">
-        <h3 id="city">Lima</h3>
+            </div>
+          </div>
         </div>
-    <div class="col">
-        <h1>
-        <img
-          src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-          id="icon"
-        />
-        <span id="currentTemperature">17</span>
-        <span id="units">C°</span>
-      </h1>
-    </div>
-    
-     
-<div class="col">
-        <ul>
-        <li id="weatherText">cloudy</li>
-        <li>
-          Humidity: <i class="fas fa-tint"></i><span id="hum0">19 %</span>
-        </li>
-        <li>Last updated: <span id="current-date"> </span></li>
-      </ul>
-    </div>
-    
-      <main>
-        <div class="days">
-          <div class="row">
-            <span class="col-2">Wed</span>
-            <span class="col-2">Tue</span>
-            <span class="col-2">Fri</span>
-            <span class="col-2">Sat</span>
-            <span class="col-2">Sun</span>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <h3 id="city">Lima</h3>
+          </div>
+          <div class="col">
+            <h1>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                id="icon"
+              />
+              <span id="currentTemperature">17</span>
+              <span id="units">C°</span>
+            </h1>
+          </div>
+
+          <div class="col">
+            <ul>
+              <li id="weatherText">cloudy</li>
+              <li>
+                Humidity: <i class="fas fa-tint"></i><span id="hum0">19 %</span>
+              </li>
+              <li>Last updated: <span id="current-date"> </span></li>
+            </ul>
+          </div>
+        </div>
+      
+
+
+      <div class="weather-forecast">
+            <div class="row">
+              <div class="col-2">
+                <div class="weather-forecast-date">Thu</div>
+                <img
+                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  alt=""
+                  width="42"
+                />
+                <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-max"> 18° </span>
+                  <span class="weather-forecast-temperature-min"> 12° </span>
+                </div>
+                <div class="humidity"> <span class="humidity-icon"><i class="fas fa-tint"></i></span> <span id="hum1">19%</span></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="temperature">
-          <div class="row">
-            <span class="col-2" id="cel1">20°C</span>
-            <span class="col-2" id="cel2">25°C</span>
-            <span class="col-2" id="cel3">21°C</span>
-            <span class="col-2" id="cel4">15°C</span>
-            <span class="col-2" id="cel5">23°C</span>
-          </div>
-        </div>
-
-        <div class="weather">
-          <div class="row">
-            <span class="col-2"
-              ><i class="fas fa-cloud-showers-heavy"></i
-            ></span>
-            <span class="col-2"><i class="fas fa-sun"></i></span>
-            <span class="col-2"><i class="fas fa-sun"></i></span>
-            <span class="col-2"><i class="fas fa-cloud-sun-rain"></i></span>
-            <span class="col-2"><i class="fas fa-cloud-sun"></i></span>
-          </div>
-        </div>
-
-        <div class="humidity">
-          <div class="row">
-            <span class="col-2"
-              ><i class="fas fa-tint"></i> <span id="hum1"></span
-            ></span>
-            <span class="col-2"
-              ><i class="fas fa-tint"></i> <span id="hum2"></span
-            ></span>
-            <span class="col-2"
-              ><i class="fas fa-tint"></i><span id="hum3"></span
-            ></span>
-            <span class="col-2"
-              ><i class="fas fa-tint"></i> <span id="hum4"></span
-            ></span>
-            <span class="col-2"
-              ><i class="fas fa-tint"></i> <span id="hum5"></span
-            ></span>
-          </div>
-        </div>
-
-        <div class="gitHub">
-          <a
-            href="https://github.com/AleIgleRam/weather-app-project"
-            target="_blank"
-            >Open-source code </a
-          ><span>by Ale Iglesias</span>
-        </div>
-      </main>
+      <div class="gitHub">
+        <a
+          href="https://github.com/AleIgleRam/weather-app-project"
+          target="_blank"
+          >Open-source code </a
+        ><span>by Ale Iglesias</span>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
