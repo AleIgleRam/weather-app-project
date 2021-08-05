@@ -25,6 +25,37 @@ if (minutes < 10) {
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${day} ${hour} : ${minutes}`;
 
+//Display Forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img
+                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  alt=""
+                  width="42"
+                />
+                <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-max"> 18° </span>
+                  <span class="weather-forecast-temperature-min"> 12° </span>
+                </div>
+                <div class="humidity"> <span class="humidity-icon"><i class="fas fa-tint"></i></span> <span id="hum1">19%</span></div>
+                </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Current Weather All Cities
 
 function searchWeather(event) {
@@ -100,3 +131,5 @@ function showWeather(event) {
 
 let currentWeather = document.querySelector("#current-city");
 currentWeather.addEventListener("click", showWeather);
+
+displayForecast();
