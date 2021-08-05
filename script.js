@@ -37,6 +37,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
+  console.log(forecast);
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -65,7 +66,9 @@ function displayForecast(response) {
                     forecastDay.temp.min
                   )}° </span>
                 </div>
-                <div class="humidity"> <span class="humidity-icon"><i class="fas fa-tint"></i></span> <span id="hum1">19%</span></div>
+                <div class="humidity"> <span class="humidity-icon"><i class="fas fa-tint"></i></span> <span id="hum1">${
+                  forecastDay.humidity
+                }%</span></div>
                 </div>
           `;
     }
@@ -76,7 +79,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "39875ec258d45cbbcd00f2745b4d9588";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
