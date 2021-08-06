@@ -86,39 +86,38 @@ function getForecast(coordinates) {
 
 //Current Weather All Cities
 
-function searchWeather(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-input");
+function displayWeather(response) {
+  let currentTemperatureElement = document.querySelector("#currentTemperature");
+  let cityElement = document.querySelector("#city");
+  let weatherTextElement = document.querySelector("#weatherText");
+  let currenthumidityElement = document.querySelector("#hum0");
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  currentTemperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  weatherTextElement.innerHTML = response.data.weather[0].description;
+  currenthumidityElement.innerHTML = `${response.data.main.humidity} %`;
+  getForecast(response.data.coord);
+}
+
+function search(city) {
   let apiKey = "39875ec258d45cbbcd00f2745b4d9588";
-  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&APPID=${apiKey}&&units=metric`;
-
-  function displayWeather(response) {
-    let currentTemperatureElement = document.querySelector(
-      "#currentTemperature"
-    );
-    let cityElement = document.querySelector("#city");
-    let weatherTextElement = document.querySelector("#weatherText");
-    let currenthumidityElement = document.querySelector("#hum0");
-
-    let icon = document.querySelector("#icon");
-    icon.setAttribute(
-      "src",
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-
-    currentTemperatureElement.innerHTML = Math.round(response.data.main.temp);
-    cityElement.innerHTML = response.data.name;
-    weatherTextElement.innerHTML = response.data.weather[0].description;
-    currenthumidityElement.innerHTML = `${response.data.main.humidity} %`;
-
-    getForecast(response.data.coord);
-  }
-
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(weatherUrl).then(displayWeather);
 }
 
-let cityWeather = document.querySelector("#enter-city");
-cityWeather.addEventListener("click", searchWeather);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+//let cityWeather = document.querySelector("#enter-city");
+//cityWeather.addEventListener("click", displayWeather);
 
 //Current Weather Current City
 
@@ -160,3 +159,8 @@ function showWeather(event) {
 
 let currentWeather = document.querySelector("#current-city");
 currentWeather.addEventListener("click", showWeather);
+
+let form = document.querySelector("#enter-city");
+form.addEventListener("click", handleSubmit);
+
+search("Cusco");
