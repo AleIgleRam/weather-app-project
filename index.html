@@ -28,34 +28,32 @@
 
   <body>
     <div class="style">
-      <div class="header">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <form class="city-look" id="city-search">
-                <input
-                  type="search"
-                  id="city-input"
-                  placeholder="Enter a city..."
-                  autocomplete="off"
-                />
-                <i class="fas fa-search" id="enter-city"></i>
-                <span>
-                  <i class="fas fa-thumbtack" id="current-city"></i>
-                </span>
-              </form>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <form class="city-look" id="city-search">
+              <input
+                type="search"
+                id="city-input"
+                placeholder="Enter a city..."
+                autocomplete="off"
+              />   
+             <span> <i class="fas fa-search" id="enter-city"></i></span>
+              <span>
+                <i class="fas fa-thumbtack" id="current-city"></i>
+              </span>
+               </form>
+          </div>
 
-            <div class="col">
-              <span><i class="fas fa-sun"></i></span>
-              <span><i class="fas fa-arrow-up"></i></span>
-              <span class="sunrise">5:20</span>
-              <span><i class="fas fa-arrow-down"></i></span>
-              <span class="sunset">21:30</span>
-            </div>
+          <div class="col-sm-4">
+            <span><i class="fas fa-sun"></i></span>
+            <span><i class="fas fa-arrow-up"></i></span>
+            <span class="sunrise">5:20</span>
+            <span><i class="fas fa-arrow-down"></i></span>
+            <span class="sunset">21:30</span>
           </div>
         </div>
-      </div>
+     </div>
 
       <div class="row">
         <div class="col">
@@ -68,7 +66,7 @@
               id="icon"
             />
             <span id="currentTemperature"></span>
-            <span id="units"></span>
+            <span id="units">°C</span>
           </h1>
         </div>
 
@@ -104,6 +102,8 @@
         </div>
       </div>
 
+       
+</div>
       <div class="gitHub">
         <a
           href="https://github.com/AleIgleRam/weather-app-project"
@@ -112,6 +112,7 @@
         ><span>by Ale Iglesias</span>
       </div>
     </div>
+    
     <script src="script.js"></script>
   </body>
 </html>
