@@ -13,7 +13,7 @@
   font-family: "Cabin Sketch", cursive;
 }
 #city {
-  font-size: 60px;
+  font-size: 50px;
   font-family: "Cabin Sketch", cursive;
   text-align: center;
   padding: 15px;
@@ -68,6 +68,7 @@ ul {
   font-size: 16px;
   font-family: "Cabin Sketch", cursive;
   padding: 15px;
+  margin-top: 40px;
 }
 
 li::first-letter {
@@ -81,7 +82,7 @@ li::first-letter {
 }
 
 #hum0 {
-  font-size: 25px;
+  font-size: 16px;
   font-family: "Cabin Sketch", cursive;
 }
 
