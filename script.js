@@ -25,6 +25,21 @@ if (minutes < 10) {
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${day} ${hour} : ${minutes}`;
 
+//get sunrise and sunset timestamp
+
+function sunDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
 //Display Forecast
 
 function formatDay(timestamp) {
@@ -101,6 +116,12 @@ function displayWeather(response) {
   cityElement.innerHTML = response.data.name;
   weatherTextElement.innerHTML = response.data.weather[0].description;
   currenthumidityElement.innerHTML = `${response.data.main.humidity} %`;
+  document.querySelector("#sunrise").innerHTML = sunDate(
+    response.data.sys.sunrise * 1000
+  );
+  document.querySelector("#sunset").innerHTML = sunDate(
+    response.data.sys.sunset * 1000
+  );
   getForecast(response.data.coord);
 }
 
@@ -148,6 +169,12 @@ function showWeather(event) {
       cityElement.innerHTML = response.data.name;
       weatherTextElement.innerHTML = response.data.weather[0].description;
       currenthumidityElement.innerHTML = `${response.data.main.humidity} %`;
+      document.querySelector("#sunrise").innerHTML = sunDate(
+        response.data.sys.sunrise * 1000
+      );
+      document.querySelector("#sunset").innerHTML = sunDate(
+        response.data.sys.sunset * 1000
+      );
       getForecast(response.data.coord);
     }
 
