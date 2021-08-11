@@ -137,9 +137,6 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-//let cityWeather = document.querySelector("#enter-city");
-//cityWeather.addEventListener("click", displayWeather);
-
 //Current Weather Current City
 
 function showWeather(event) {
