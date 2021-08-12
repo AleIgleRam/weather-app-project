@@ -184,7 +184,10 @@ function showWeather(event) {
 let currentWeather = document.querySelector("#current-city");
 currentWeather.addEventListener("click", showWeather);
 
-let form = document.querySelector("#enter-city");
-form.addEventListener("click", handleSubmit);
+let form = document.querySelector("#city-search");
+form.addEventListener("submit", handleSubmit);
+
+let magnifier = document.querySelector("#enter-city");
+magnifier.addEventListener("click", handleSubmit);
 
 search("Cusco");
